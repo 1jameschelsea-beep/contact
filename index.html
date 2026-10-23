@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Contact Form</h1>
+
+        <form id="contact" action="">
+            <input type="hidden" name="subject" value="Contact Form Submission">
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+
+            <button type="button" class="btn" id="button" onclick="sendEmail()">Send</button>
+            <div id="error">
+    </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init({
+                publicKey: "4DtobTtcBNDvgIki-",
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
